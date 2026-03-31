@@ -8,7 +8,7 @@ import { detectMemoryRequest, saveMemory } from '../utils/memoryDetection';
 import './Chat.css';
 import './ChatTheme.css';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 const MODELS = {
   'claude-opus-4-6-thinking': '🧠 Opus 4.6 Thinking (Best — Deep reasoning)',

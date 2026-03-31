@@ -3,7 +3,7 @@ import { startRegistration, startAuthentication } from '@simplewebauthn/browser'
 import axios from 'axios';
 import './Auth.css';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 function Auth({ onLogin }) {
   const [username, setUsername] = useState('');
