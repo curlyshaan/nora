@@ -31,7 +31,9 @@ app.use(express.json());
 
 // Serve static files in production
 if (isProduction) {
-  app.use(express.static(path.join(__dirname, '../client/dist')));
+  const distPath = path.join(__dirname, '../client/dist');
+  console.log('📁 Serving static files from:', distPath);
+  app.use(express.static(distPath));
 }
 
 // Initialize database on startup
