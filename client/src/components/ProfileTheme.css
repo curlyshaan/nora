@@ -1,0 +1,127 @@
+/* Dark Mode for Profile */
+body.dark-mode .profile-container {
+  background: #1a1a1a;
+}
+
+body.dark-mode .profile-header {
+  background: #2c2c2c;
+  border-bottom-color: #444;
+  color: #e0e0e0;
+}
+
+body.dark-mode .profile-header h1 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .profile-content {
+  color: #e0e0e0;
+}
+
+body.dark-mode .profile-info {
+  background: #1e3a5f;
+  border-left-color: #2196f3;
+}
+
+body.dark-mode .profile-info p {
+  color: #64b5f6;
+}
+
+body.dark-mode .profile-form {
+  background: #2c2c2c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .form-group label {
+  color: #e0e0e0;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group select:focus,
+body.dark-mode .form-group textarea:focus {
+  border-color: #667eea;
+}
+
+body.dark-mode .header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+body.dark-mode .theme-btn {
+  padding: 10px 15px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+body.dark-mode .theme-btn:hover {
+  background: #5568d3;
+}
+
+/* Light Mode for Profile */
+body.light-mode .profile-container {
+  background: #f5f5f5;
+}
+
+body.light-mode .profile-header {
+  background: white;
+  border-bottom-color: #e0e0e0;
+}
+
+body.light-mode .profile-header h1 {
+  color: #333;
+}
+
+body.light-mode .profile-info {
+  background: #e3f2fd;
+  border-left-color: #2196f3;
+}
+
+body.light-mode .profile-info p {
+  color: #1565c0;
+}
+
+body.light-mode .profile-form {
+  background: white;
+}
+
+body.light-mode .form-group label {
+  color: #333;
+}
+
+body.light-mode .form-group input,
+body.light-mode .form-group select,
+body.light-mode .form-group textarea {
+  background: white;
+  color: #333;
+  border-color: #e0e0e0;
+}
+
+body.light-mode .header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+body.light-mode .theme-btn {
+  padding: 10px 15px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+body.light-mode .theme-btn:hover {
+  background: #5568d3;
+}

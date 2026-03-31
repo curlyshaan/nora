@@ -1,0 +1,280 @@
+/* Dark Mode Styles */
+body.dark-mode .chat-container {
+  background: #212121;
+}
+
+body.dark-mode .chat-main {
+  background: #212121;
+}
+
+body.dark-mode .chat-header {
+  background: rgba(33, 33, 33, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #e0e0e0;
+}
+
+body.dark-mode .model-selector select {
+  background: #2c2c2c;
+  color: #e0e0e0;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .user-info {
+  color: #aaa;
+}
+
+body.dark-mode .message {
+  border-bottom: none;
+}
+
+body.dark-mode .message.user .message-content {
+  background: #667eea;
+  color: white;
+}
+
+body.dark-mode .message.assistant .message-content {
+  color: #d0d0d0;
+  background: transparent;
+}
+
+body.dark-mode .message.assistant .message-content h1,
+body.dark-mode .message.assistant .message-content h2,
+body.dark-mode .message.assistant .message-content h3 {
+  color: #f0f0f0;
+  border-color: #444;
+}
+
+body.dark-mode .message.assistant .message-content strong {
+  color: #fff;
+}
+
+body.dark-mode .message.assistant .message-content code {
+  background: #1a1a1a;
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+body.dark-mode .message.assistant .message-content pre {
+  background: #1a1a1a;
+  color: #e0e0e0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .message.assistant .message-content pre code {
+  background: transparent;
+  border: none;
+}
+
+body.dark-mode .message.assistant .message-content blockquote {
+  border-left-color: #667eea;
+  color: #aaa;
+  background: rgba(102, 126, 234, 0.05);
+  padding: 12px 16px;
+  border-radius: 4px;
+}
+
+body.dark-mode .message.assistant .message-content table {
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .message.assistant .message-content table th {
+  background: #667eea;
+}
+
+body.dark-mode .message.assistant .message-content table td {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .message.assistant .message-content table tr:nth-child(even) {
+  background: #252525;
+}
+
+body.dark-mode .input-container {
+  background: transparent;
+}
+
+body.dark-mode .input-wrapper {
+  background: #2c2c2c;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .input-wrapper:focus-within {
+  border-color: #667eea;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.25);
+}
+
+body.dark-mode .input-container textarea {
+  background: transparent;
+  color: #e0e0e0;
+  border: none;
+}
+
+body.dark-mode .input-container textarea::placeholder {
+  color: #666;
+}
+
+body.dark-mode .welcome-message {
+  color: #aaa;
+}
+
+body.dark-mode .welcome-message h2 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .disclaimer {
+  background: #3a3a1a;
+  border-left-color: #ffc107;
+  color: #ffeb3b;
+}
+
+/* Light Mode Styles */
+body.light-mode .chat-container {
+  background: #ffffff;
+}
+
+body.light-mode .chat-main {
+  background: #ffffff;
+}
+
+body.light-mode .chat-header {
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .message {
+  border-bottom: none;
+}
+
+body.light-mode .message.user .message-content {
+  background: #667eea;
+  color: white;
+}
+
+body.light-mode .message.assistant .message-content {
+  color: #2c2c2c;
+  background: transparent;
+}
+
+body.light-mode .input-wrapper {
+  background: #f5f5f5;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .input-wrapper:focus-within {
+  border-color: #667eea;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.15);
+}
+
+body.light-mode .input-container textarea {
+  color: #1a1a1a;
+}
+
+body.light-mode .input-container textarea::placeholder {
+  color: #999;
+}
+
+body.light-mode .model-selector select {
+  background: white;
+  color: #333;
+  border-color: #e0e0e0;
+}
+
+body.light-mode .user-info {
+  color: #666;
+}
+
+body.light-mode .message.assistant .message-content {
+  background: #f0f0f0;
+  color: #333;
+}
+
+body.light-mode .message.assistant .message-content h1,
+body.light-mode .message.assistant .message-content h2,
+body.light-mode .message.assistant .message-content h3 {
+  color: #222;
+  border-color: #ddd;
+}
+
+body.light-mode .message.assistant .message-content strong {
+  color: #111;
+}
+
+body.light-mode .message.assistant .message-content code {
+  background: #e8e8e8;
+  color: #c7254e;
+}
+
+body.light-mode .message.assistant .message-content pre {
+  background: #f8f8f8;
+  color: #333;
+  border-color: #ddd;
+}
+
+body.light-mode .message.assistant .message-content blockquote {
+  border-left-color: #667eea;
+  color: #555;
+}
+
+body.light-mode .message.assistant .message-content table {
+  background: white;
+}
+
+body.light-mode .message.assistant .message-content table th {
+  background: #667eea;
+}
+
+body.light-mode .message.assistant .message-content table td {
+  border-bottom-color: #e0e0e0;
+}
+
+body.light-mode .message.assistant .message-content table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+body.light-mode .input-container {
+  background: white;
+  border-top-color: #e0e0e0;
+}
+
+body.light-mode .input-container textarea {
+  background: white;
+  color: #333;
+  border-color: #e0e0e0;
+}
+
+body.light-mode .input-container textarea:focus {
+  border-color: #667eea;
+}
+
+body.light-mode .welcome-message {
+  color: #666;
+}
+
+body.light-mode .welcome-message h2 {
+  color: #333;
+}
+
+body.light-mode .disclaimer {
+  background: #fff3cd;
+  border-left-color: #ffc107;
+  color: #856404;
+}
+
+/* Theme toggle button */
+.theme-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  background: #667eea;
+  color: white;
+}
+
+.theme-btn:hover {
+  background: #5568d3;
+}
