@@ -536,13 +536,9 @@ app.get('/api/usage-stats', async (req, res) => {
   }
 });
 
-// Serve React app for all other routes in production (except assets)
+// Serve React app for all other routes in production
 if (isProduction) {
   app.get('*', (req, res) => {
-    // Don't serve index.html for asset requests
-    if (req.path.startsWith('/assets/') || req.path.endsWith('.js') || req.path.endsWith('.css') || req.path.endsWith('.svg')) {
-      return res.status(404).send('Not found');
-    }
     res.sendFile(path.join(__dirname, '../client/dist/index.html'));
   });
 }
