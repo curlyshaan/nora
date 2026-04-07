@@ -206,6 +206,12 @@ export async function getEarningsCalendar(from, to) {
   }
 }
 
+// Helper function to remove thinking blocks from response
+function removeThinkingBlocks(text) {
+  // Remove <thinking>...</thinking> blocks including the tags
+  return text.replace(/<thinking>[\s\S]*?<\/thinking>/g, '');
+}
+
 // Streaming response with web search support
 export async function streamMessageToQuatarly(messages, model = MODELS.OPUS, userProfile = null, userMemories = [], onChunk) {
   try {
@@ -252,6 +258,8 @@ export async function streamMessageToQuatarly(messages, model = MODELS.OPUS, use
     let fullText = '';
     let hasReceivedData = false;
     let lastDataTime = Date.now();
+    let insideThinkingBlock = false;
+    let buffer = '';
 
     response.data.on('data', (chunk) => {
       hasReceivedData = true;
@@ -267,11 +275,45 @@ export async function streamMessageToQuatarly(messages, model = MODELS.OPUS, use
             const parsed = JSON.parse(data);
 
             if (parsed.type === 'content_block_delta' && parsed.delta?.text) {
-              fullText += parsed.delta.text;
-              onChunk(parsed.delta.text);
+              buffer += parsed.delta.text;
+
+              // Check for thinking block markers
+              if (buffer.includes('<thinking>')) {
+                insideThinkingBlock = true;
+              }
+
+              if (insideThinkingBlock) {
+                if (buffer.includes('</thinking>')) {
+                  // Remove the entire thinking block
+                  buffer = buffer.replace(/<thinking>[\s\S]*?<\/thinking>/g, '');
+                  insideThinkingBlock = false;
+
+                  // Send any remaining content after the thinking block
+                  if (buffer) {
+                    fullText += buffer;
+                    onChunk(buffer);
+                    buffer = '';
+                  }
+                }
+                // Don't send anything while inside thinking block
+              } else {
+                // Not in thinking block, send the content
+                fullText += parsed.delta.text;
+                onChunk(parsed.delta.text);
+                buffer = '';
+              }
             } else if (parsed.type === 'content_block_start' && parsed.content_block?.text) {
-              fullText += parsed.content_block.text;
-              onChunk(parsed.content_block.text);
+              buffer += parsed.content_block.text;
+
+              if (buffer.includes('<thinking>')) {
+                insideThinkingBlock = true;
+              }
+
+              if (!insideThinkingBlock) {
+                fullText += parsed.content_block.text;
+                onChunk(parsed.content_block.text);
+                buffer = '';
+              }
             }
           } catch (e) {
             // Skip invalid JSON
